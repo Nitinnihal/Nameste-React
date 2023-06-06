@@ -1,0 +1,33 @@
+{
+  "name": "nameste-react",
+  "version": "1.0.0",
+  "description": "this is Nameste-React by Nitin Nihal",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nitinnihal/Nameste-React.git"
+  },
+  "keywords": [
+    "React",
+    "Nameste-React"
+  ],
+  "author": "Nitin Nihal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Nitinnihal/Nameste-React/issues"
+  },
+  "homepage": "https://github.com/Nitinnihal/Nameste-React#readme",
+  "devDependencies": {
+    "parcel": "^2.9.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 5 version"
+  ]
+}
