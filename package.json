@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "description": "this is Nameste-React by Nitin Nihal",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
