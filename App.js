@@ -15,7 +15,7 @@ import ReactDOM from "react-dom/client";
  *    -rating
  *    -cuisine
  *    -delivery time
- *    
+ *
  * footer
  * -copyright
  * -links
@@ -23,58 +23,1752 @@ import ReactDOM from "react-dom/client";
  * -contact
  */
 
-const Header = () =>{
-    return(
-        <div className = "header">
-                <div classname = "logo-container">
-                    <img className =  "logo"
-                        src = "https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png" />
-                </div>
-            <div className = "Nav-items">
-                <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Cart</li>
-                </ul>
-            </div>
-        </div>
-    )
-}
+const Header = () => {
+  return (
+    <div className="header">
+      <div className="logo-container">
+        <img
+          className="logo"
+          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png"
+        />
+      </div>
+      <div className="Nav-items">
+        <ul>
+          <li>Home</li>
+          <li>About us</li>
+          <li>Contact us</li>
+          <li>Cart</li>
+        </ul>
+      </div>
+    </div>
+  );
+};
 
-const RestaurentCard = () =>{
-    return(
-        <div className = "res-card">
-            <img src = "data:image/jpeg;base64,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" />
-            <h3>Meghna Foods</h3>
-            <></>
-            <></>
-        </div>
-    )
-}
+const RestaurentCard = (Props) => {
+  const { resData } = Props;
 
-const Body = () =>{
-    return(
-        <div className = "body">
-            <div className = "search">search</div>
-                <div className = "res-container">
-                    <RestaurentCard/>
-                <div/>
-            </div>
+  const {
+    name,
+    cuisines,
+    avgRating,
+    costForTwo,
+    deliveryTime,
+    cloudinaryImageId,
+  } = resData?.data;
+  return (
+    <div className="res-card">
+      <img
+        alt="res-logo"
+        className="res-logo"
+        src={
+          "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" +
+          resData.data.cloudinaryImageId
+        }
+      />
+      <h3>{name}</h3>
+      <h4>{cuisines.join(", ")}</h4>
+      <h4>{avgRating} stars</h4>
+      <h4>₹{costForTwo / 100} For Two</h4>
+      <h4>{deliveryTime} Min</h4>
+    </div>
+  );
+};
 
-        </div>
-    )
-}
+const resList = [
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "687246",
+      name: "Aubree",
+      uuid: "f619dfc5-a3a8-48f2-81d4-66268a10ecba",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "100+ ratings",
+      cloudinaryImageId: "6a7973d432c533933de71326a0a3dde9",
+      cuisines: ["Desserts", "Bakery"],
+      tags: [],
+      costForTwo: 80000,
+      costForTwoString: "₹800 FOR TWO",
+      deliveryTime: 24,
+      minDeliveryTime: 24,
+      maxDeliveryTime: 24,
+      slaString: "24 MINS",
+      lastMileTravel: 3.700000047683716,
+      slugs: {
+        restaurant: "aubree-rajarajeshwari-nagar-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "NO.193, SHOP NO.2, GROUND FLOOR, RAGHAVENDRA ARCADE, JAWAHARLAL NEHRU ROAD, BEML LAYOUT, 4TH STAGE, RAJA RAJESHWARI NAGAR - BENGALURU, INDIA, R R Nagara , B.B.M.P West, Karnataka-560098",
+      locality: "Jawaharlal Nehru Road",
+      parentId: 3807,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 3300,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=7488162~p=1~eid=00000189-63d7-c871-1600-10ca0024013f~srvts=1689597233265",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "3.7 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "30% OFF",
+        subHeader: "UPTO ₹75",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "687246",
+        deliveryTime: 24,
+        minDeliveryTime: 24,
+        maxDeliveryTime: 24,
+        lastMileTravel: 3.700000047683716,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.1",
+      totalRatings: 100,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "448940",
+      name: "Pizza Hut",
+      uuid: "a3722581-b1bd-413e-a5be-be80f0c0b9f8",
+      city: "1",
+      area: "Banashankari",
+      totalRatingsString: "500+ ratings",
+      cloudinaryImageId: "2b4f62d606d1b2bfba9ba9e5386fabb7",
+      cuisines: ["Pizzas"],
+      tags: [],
+      costForTwo: 35000,
+      costForTwoString: "₹350 FOR TWO",
+      deliveryTime: 30,
+      minDeliveryTime: 30,
+      maxDeliveryTime: 30,
+      slaString: "30 MINS",
+      lastMileTravel: 3,
+      slugs: {
+        restaurant: "pizza-hut-manthri-alpine-banashankari",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "PIZZA HUT at Ground Floor, Site No410, Opp. Manthri Alpine, Banashankari 5th Stage, Uttarahali Kengari Main Road, Bangalore, Jayanagar , B.B.M.P South, Karnataka, 560061",
+      locality: "5th Stage",
+      parentId: 721,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 3300,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "3 kms",
+      hasSurge: false,
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "448940",
+        deliveryTime: 30,
+        minDeliveryTime: 30,
+        maxDeliveryTime: 30,
+        lastMileTravel: 3,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.8",
+      totalRatings: 500,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "460379",
+      name: "Burger King",
+      uuid: "1514d22d-d183-4a79-9042-4ea29be3a497",
+      city: "1",
+      area: "Gopalan Arcade Mall",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "e33e1d3ba7d6b2bb0d45e1001b731fcf",
+      cuisines: ["Burgers", "American"],
+      tags: [],
+      costForTwo: 35000,
+      costForTwoString: "₹350 FOR TWO",
+      deliveryTime: 33,
+      minDeliveryTime: 33,
+      maxDeliveryTime: 33,
+      slaString: "33 MINS",
+      lastMileTravel: 5,
+      slugs: {
+        restaurant: "burger-king-rr-nagar-1st-block-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "No.447,18,2, Gopalan Arcade Mall, Food Court, Unit No.G-10 and G-11, Ground Floor, RR Nagar 1st Block, Mysore Road, Bangalore, R R Nagara , B.B.M.P West, Karnataka-560098",
+      locality: "Gopalan Arcade Mall",
+      parentId: 166,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 5200,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 5200,
+        message: "",
+        title: "Delivery Charge",
+        amount: "5200",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "5 kms",
+      hasSurge: false,
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "460379",
+        deliveryTime: 33,
+        minDeliveryTime: 33,
+        maxDeliveryTime: 33,
+        lastMileTravel: 5,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.0",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "271957",
+      name: "Hari Super Sandwich",
+      uuid: "774a659a-c728-4a7c-b60f-64c8a15e68c1",
+      city: "1",
+      area: "Uttarahalli",
+      totalRatingsString: "5000+ ratings",
+      cloudinaryImageId: "hl6mgi04xy1fom6o1wjb",
+      cuisines: ["Snacks"],
+      tags: [],
+      costForTwo: 15000,
+      costForTwoString: "₹150 FOR TWO",
+      deliveryTime: 31,
+      minDeliveryTime: 31,
+      maxDeliveryTime: 31,
+      slaString: "31 MINS",
+      lastMileTravel: 6.300000190734863,
+      slugs: {
+        restaurant:
+          "hari-super-sandwich-kumaraswamy-layout-&-uttarahalli-kumaraswamy-layout-&-uttarahalli",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "NO.33, 2ND MAIN,KSRTC LAYOUT,CHIKKALASANDRA,BANGALORE-560061,District-B.B.M.P South,STATE -Karnataka",
+      locality: "KSRTC Layout",
+      parentId: 454,
+      unserviceable: false,
+      veg: true,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 5800,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 5800,
+        message: "",
+        title: "Delivery Charge",
+        amount: "5800",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=7507529~p=4~eid=00000189-63d7-c871-1600-10cb00240427~srvts=1689597233265",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "6.3 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "₹100 OFF",
+        subHeader: "ABOVE ₹499",
+        discountTag: "FLAT DEAL",
+        headerTypeV2: 0,
+      },
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "271957",
+        deliveryTime: 31,
+        minDeliveryTime: 31,
+        maxDeliveryTime: 31,
+        lastMileTravel: 6.300000190734863,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.0",
+      totalRatings: 5000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "342547",
+      name: "Meghana Foods",
+      uuid: "82158e90-2497-4b2a-93fc-6ea86f859dcd",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "g0isknuhld1ltwxkjkcg",
+      cuisines: ["Biryani", "Andhra", "South Indian"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 27,
+      minDeliveryTime: 27,
+      maxDeliveryTime: 27,
+      slaString: "27 MINS",
+      lastMileTravel: 4.099999904632568,
+      slugs: {
+        restaurant: "meghana-foods-rajarajeshwari-nagar-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Sankranti Arcade No.285C, Phase I, 9Th Main Road, Ideal Home Rajarajeshwarinagar, Remco Bhel Layout, Ideal Homes Twp, RR Nagar, Bengaluru, Karnataka 560098",
+      locality: "BHEL layout",
+      parentId: 635,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 3900,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3900,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3900",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "4 kms",
+      hasSurge: false,
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "342547",
+        deliveryTime: 27,
+        minDeliveryTime: 27,
+        maxDeliveryTime: 27,
+        lastMileTravel: 4.099999904632568,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.3",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "58748",
+      name: "Big Bite",
+      uuid: "22c0626b-ac87-4764-a42f-6f5ab5ca0e59",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "thudonlgljf2cuwd7geg",
+      cuisines: ["Snacks", "Fast Food", "North Indian"],
+      tags: [],
+      costForTwo: 15000,
+      costForTwoString: "₹150 FOR TWO",
+      deliveryTime: 28,
+      minDeliveryTime: 28,
+      maxDeliveryTime: 28,
+      slaString: "28 MINS",
+      lastMileTravel: 3.799999952316284,
+      slugs: {
+        restaurant: "big-bite-rr-nagar-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "224, 8th Main, Opp. Punjab National Bank, BEML Layout, R R Nagar, Bengaluru 560098",
+      locality: "BEML Layout",
+      parentId: 5621,
+      unserviceable: false,
+      veg: true,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 3300,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "3.7 kms",
+      hasSurge: false,
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "58748",
+        deliveryTime: 28,
+        minDeliveryTime: 28,
+        maxDeliveryTime: 28,
+        lastMileTravel: 3.799999952316284,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.1",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "372520",
+      name: "Sri Krishna Grand",
+      uuid: "ae998931-82f4-4f5d-bc3a-fa628f4f277a",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "tbztxalmq8ayhoysjuvz",
+      cuisines: [
+        "North Indian",
+        "South Indian",
+        "Chinese",
+        "Desserts",
+        "Beverages",
+      ],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 25,
+      minDeliveryTime: 25,
+      maxDeliveryTime: 25,
+      slaString: "25 MINS",
+      lastMileTravel: 3,
+      slugs: {
+        restaurant:
+          "sri-krishna-grand-rajarajeshwari-nagar-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "NO.1115, 1ST MAIN ROAD, 4TH CROSS, KENGERI SATELLITE TOWN, NEAR KENGERI RAILWAY STATION, BANGALORE",
+      locality: "SMV Layout",
+      parentId: 193891,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 3300,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=7497224~p=7~eid=00000189-63d7-c871-1600-10cc0024072e~srvts=1689597233265",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "3 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "10% OFF",
+        subHeader: "UPTO ₹40",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "372520",
+        deliveryTime: 25,
+        minDeliveryTime: 25,
+        maxDeliveryTime: 25,
+        lastMileTravel: 3,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "3.9",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "30827",
+      name: "McDonald's",
+      uuid: "9ee9a777-6dc9-48a8-8191-4a292b27385b",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "10000+ ratings",
+      cloudinaryImageId: "ee5f8e06b300efc07c9fe3f4df40dfc4",
+      cuisines: ["Burgers", "Beverages", "Cafe", "Desserts"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 38,
+      minDeliveryTime: 38,
+      maxDeliveryTime: 38,
+      slaString: "38 MINS",
+      lastMileTravel: 5,
+      slugs: {
+        restaurant: "mcdonalds-arch-mall-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Mc Donald's family restaurant,  Gopalan Arch mall Shop no 18/2, Raja Rajeshwari nagar, Nayandahalli , Mysore road, Bengaluru 560039",
+      locality: "Gopalan Arcade",
+      parentId: 630,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 5200,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 5200,
+        message: "",
+        title: "Delivery Charge",
+        amount: "5200",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "5 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "10% OFF",
+        subHeader: "ABOVE ₹999",
+        discountTag: "FLAT DEAL",
+        headerTypeV2: 0,
+      },
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "30827",
+        deliveryTime: 38,
+        minDeliveryTime: 38,
+        maxDeliveryTime: 38,
+        lastMileTravel: 5,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.2",
+      totalRatings: 10000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "633341",
+      name: "Maharaja Military Canteen - Donne Biryani",
+      uuid: "1c267b7c-cc1f-403e-896b-ebdc45c0e8e5",
+      city: "1",
+      area: "Uttarahalli Hobli",
+      totalRatingsString: "100+ ratings",
+      cloudinaryImageId: "34eca74d4d3c695a0bf85951b2666000",
+      cuisines: ["Biryani", "South Indian", "Kebabs"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 24,
+      minDeliveryTime: 24,
+      maxDeliveryTime: 24,
+      slaString: "24 MINS",
+      lastMileTravel: 1.7000000476837158,
+      slugs: {
+        restaurant:
+          "maharaja-military-canteen-rajarajeshwari-nagar-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "No.16, SY No. 45 & 46 &48 , Channasandra Village, Uttarahalli Hobli, Bangalore -560098",
+      locality: "Channasandra",
+      parentId: 21056,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2700,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2700,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2700",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=7491722~p=10~eid=00000189-63d7-c871-1600-10cd00240a0e~srvts=1689597233265",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "1.7 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "40% OFF",
+        subHeader: "UPTO ₹80",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "633341",
+        deliveryTime: 24,
+        minDeliveryTime: 24,
+        maxDeliveryTime: 24,
+        lastMileTravel: 1.7000000476837158,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.0",
+      totalRatings: 100,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "633340",
+      name: "Rolls On Wheels",
+      uuid: "c7dc4315-6eec-4ac2-b536-bddadeb518b0",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "100+ ratings",
+      cloudinaryImageId: "1e578359309ea72d1e12f3248a09d197",
+      cuisines: ["Fast Food", "North Indian"],
+      tags: [],
+      costForTwo: 30000,
+      costForTwoString: "₹300 FOR TWO",
+      deliveryTime: 19,
+      minDeliveryTime: 19,
+      maxDeliveryTime: 19,
+      slaString: "19 MINS",
+      lastMileTravel: 1.7000000476837158,
+      slugs: {
+        restaurant: "rolls-on-wheels-rajarajeshwari-nagar-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "No.16, SY No. 45 & 46 &48 , Channasandra Village, Uttarahalli Hobli, Bangalore -560098",
+      locality: "Channasandra Village",
+      parentId: 784,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2700,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2700,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2700",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=7491684~p=13~eid=00000189-63d7-c871-1600-10ce00240d25~srvts=1689597233265",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "1.7 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "40% OFF",
+        subHeader: "UPTO ₹80",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "633340",
+        deliveryTime: 19,
+        minDeliveryTime: 19,
+        maxDeliveryTime: 19,
+        lastMileTravel: 1.7000000476837158,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "4.2",
+      totalRatings: 100,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "638208",
+      name: "La Pino'z Pizza",
+      uuid: "77eb3a46-e5d8-4a6d-abb3-da1b4c44d543",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "500+ ratings",
+      cloudinaryImageId: "bad3vgf0d39raw1afcry",
+      cuisines: ["Pizzas", "Pastas", "Italian", "Desserts", "Beverages"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 29,
+      minDeliveryTime: 29,
+      maxDeliveryTime: 29,
+      slaString: "29 MINS",
+      lastMileTravel: 3,
+      slugs: {
+        restaurant: "la-pinoz-pizza-r-r-nagara-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "NO, 704, 4TH STAGE, RAJARAJESHWARINAGAR, BEML LAYOUT, 60TH MAIN ROAD,BANGALORE, R R Nagara , B.B.M.P West,Karnataka-560098",
+      locality: "4TH Stage",
+      parentId: 4961,
+      unserviceable: false,
+      veg: true,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 3300,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "3 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "50% OFF",
+        subHeader: "UPTO ₹100",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "638208",
+        deliveryTime: 29,
+        minDeliveryTime: 29,
+        maxDeliveryTime: 29,
+        lastMileTravel: 3,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.0",
+      totalRatings: 500,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "731270",
+      name: "Rajwada Chat",
+      uuid: "8a672b7f-5c36-48e2-a78d-d6544077dfcc",
+      city: "1",
+      area: "Rajarajeshwari Nagar",
+      totalRatingsString: "Too Few Ratings",
+      cloudinaryImageId: "69825866d40908f5daeca59425860ce4",
+      cuisines: ["Indian", "Chaat", "Snacks"],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 25,
+      minDeliveryTime: 25,
+      maxDeliveryTime: 25,
+      slaString: "25 MINS",
+      lastMileTravel: 1.2000000476837158,
+      slugs: {
+        restaurant: "rajwada-chat-rajarajeshwari-nagar-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "NO.11/2, BEML 7TH STAGE, GLOBAL VILLAGE BACK GATE, RV COLLAGE POST BANGALORE, R R Nagara , B.B.M.P West, Karnataka - 560059",
+      locality: "Rv Collage",
+      parentId: 434419,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2700,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2700,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2700",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=7473806~p=16~eid=00000189-63d7-c871-1600-10cf00241051~srvts=1689597233265",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "1.2 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "50% OFF",
+        subHeader: "UPTO ₹100",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "731270",
+        deliveryTime: 25,
+        minDeliveryTime: 25,
+        maxDeliveryTime: 25,
+        lastMileTravel: 1.2000000476837158,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "--",
+      totalRatings: 0,
+      new: true,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "334473",
+      name: "KFC",
+      uuid: "0dc50ea7-5e11-49bd-922c-7f6f82e78087",
+      city: "1",
+      area: "Kengeri",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "56c9ab92bd79745fd152a30fa2525426",
+      cuisines: ["Burgers", "Biryani", "American", "Snacks", "Fast Food"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 24,
+      minDeliveryTime: 24,
+      maxDeliveryTime: 24,
+      slaString: "24 MINS",
+      lastMileTravel: 3,
+      slugs: {
+        restaurant: "kfc-kengeri-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "Ground Floor-4-5 & 18-19 Kengari Upanagara ward no. 159 Banglore- KR",
+      locality: "Upanagara",
+      parentId: 547,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 3300,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 3300,
+        message: "",
+        title: "Delivery Charge",
+        amount: "3300",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "3 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "FREE ITEM",
+        subHeader: "",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "334473",
+        deliveryTime: 24,
+        minDeliveryTime: 24,
+        maxDeliveryTime: 24,
+        lastMileTravel: 3,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "3.9",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "359000",
+      name: "Kabab Mehak",
+      uuid: "79f96c31-54a7-48d0-9355-b02eb3fd572c",
+      city: "1",
+      area: "Uttarahalli",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "u7ucfc2nudc2opynstem",
+      cuisines: ["Snacks", "Beverages"],
+      tags: [],
+      costForTwo: 20000,
+      costForTwoString: "₹200 FOR TWO",
+      deliveryTime: 18,
+      minDeliveryTime: 18,
+      maxDeliveryTime: 18,
+      slaString: "18 MINS",
+      lastMileTravel: 0.800000011920929,
+      slugs: {
+        restaurant: "kabab-mehak-rajarajeshwari-nagar-rajarajeshwari-nagar",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "NO.70 AND 71 B NO.25/4, REFLEX SOCIETY LAYOUT,KENGERI UTTARAHALLI MAIN ROAD, MYLASANDRA VILLAGE,KENGERI HOBLI, Bengaluru - \t560060",
+      locality: "REFLEX SOCIETY LAYOUT",
+      parentId: 113103,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      ribbon: [
+        {
+          type: "PROMOTED",
+        },
+      ],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 2700,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 2700,
+        message: "",
+        title: "Delivery Charge",
+        amount: "2700",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 0,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID:
+        "cid=7497223~p=19~eid=00000189-63d7-c871-1600-10d00024133a~srvts=1689597233265",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "0.8 kms",
+      hasSurge: false,
+      aggregatedDiscountInfoV3: {
+        header: "10% OFF",
+        subHeader: "UPTO ₹40",
+        discountTag: "",
+        headerTypeV2: 0,
+      },
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "359000",
+        deliveryTime: 18,
+        minDeliveryTime: 18,
+        maxDeliveryTime: 18,
+        lastMileTravel: 0.800000011920929,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "NOT_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: true,
+      avgRating: "3.9",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+  {
+    type: "restaurant",
+    data: {
+      type: "F",
+      id: "420020",
+      name: "Bakingo",
+      uuid: "57912587-b36b-461e-a3ef-a0fe979cc570",
+      city: "1",
+      area: "Banashankari",
+      totalRatingsString: "1000+ ratings",
+      cloudinaryImageId: "yswhf0z3srblkwmqkpzp",
+      cuisines: ["Bakery", "Desserts", "Beverages", "Snacks"],
+      tags: [],
+      costForTwo: 40000,
+      costForTwoString: "₹400 FOR TWO",
+      deliveryTime: 43,
+      minDeliveryTime: 43,
+      maxDeliveryTime: 43,
+      slaString: "43 MINS",
+      lastMileTravel: 8.300000190734863,
+      slugs: {
+        restaurant: "bakingo-banashankari-banashankari",
+        city: "bangalore",
+      },
+      cityState: "1",
+      address:
+        "45/46,1st floor,kathriguppe main road,banashankari3rd stage,bangalore,560085",
+      locality: "3rd Stage",
+      parentId: 3818,
+      unserviceable: false,
+      veg: false,
+      select: false,
+      favorite: false,
+      tradeCampaignHeaders: [],
+      chain: [],
+      feeDetails: {
+        fees: [
+          {
+            name: "distance",
+            fee: 7900,
+            message: "",
+          },
+          {
+            name: "time",
+            fee: 0,
+            message: "",
+          },
+          {
+            name: "special",
+            fee: 0,
+            message: "",
+          },
+        ],
+        totalFees: 7900,
+        message: "",
+        title: "Delivery Charge",
+        amount: "7900",
+        icon: "",
+      },
+      availability: {
+        opened: true,
+        nextOpenMessage: "",
+        nextCloseMessage: "",
+      },
+      longDistanceEnabled: 1,
+      rainMode: "NONE",
+      thirdPartyAddress: false,
+      thirdPartyVendor: "",
+      adTrackingID: "",
+      badges: {
+        imageBased: [],
+        textBased: [],
+        textExtendedBadges: [],
+      },
+      lastMileTravelString: "8.3 kms",
+      hasSurge: false,
+      loyaltyDiscoverPresentationInfo: {
+        logoCtx: {
+          text: "BENEFITS",
+          logo: "v1634558776/swiggy_one/OneLogo_3x.png",
+        },
+        freedelMessage: "FREE DELIVERY",
+        exclusiveOfferMessage: "",
+      },
+      sla: {
+        restaurantId: "420020",
+        deliveryTime: 43,
+        minDeliveryTime: 43,
+        maxDeliveryTime: 43,
+        lastMileTravel: 8.300000190734863,
+        lastMileDistance: 0,
+        serviceability: "SERVICEABLE",
+        rainMode: "NONE",
+        longDistance: "IT_IS_LONG_DISTANCE",
+        preferentialService: false,
+        iconType: "EMPTY",
+      },
+      promoted: false,
+      avgRating: "4.2",
+      totalRatings: 1000,
+      new: false,
+    },
+    subtype: "basic",
+  },
+];
 
-const AppLayout = () =>{
-    return(
-        <div className = "app">
-            <Header />
-            <Body />
-        </div>
-    )
-}
+const Body = () => {
+  return (
+    <div className="body">
+      <div className="search">search</div>
+      <div className="res-container">
+        {resList.map((restaurant) => (
+          <RestaurentCard key = {restaurant.data.id} resData={restaurant} />
+        ))}
+      </div>
+    </div>
+  );
+};
 
+const AppLayout = () => {
+  return (
+    <div className="app">
+      <Header />
+      <Body />
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(<AppLayout />);
