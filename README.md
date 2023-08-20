@@ -19,3 +19,29 @@
 - gives you method to host app on https
 - does tree shaking algorithm.
 - does different Development and production bundle. 
+
+
+# Food-Zilla
+
+
+/**
+ * Header
+ * -logo
+ * -Nav item
+ * body
+ * -search
+ * -filter          // will do later
+ * -restaurentcontainer
+ *  -restaurentcard
+ *    -img
+ *    -name
+ *    -rating
+ *    -cuisine
+ *    -delivery time
+ *
+ * footer
+ * -copyright
+ * -links
+ * -address
+ * -contact
+ */
