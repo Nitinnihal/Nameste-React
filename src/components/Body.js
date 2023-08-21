@@ -1,33 +1,9 @@
 import RestaurentCard from "./RestaurentCard";
-// import resList from "../utils/mockData";
+import resList from "../utils/mockData";
+import { useState } from "react";
 
 const Body = () => {
-  let listOfRestaurent = [
-    {
-      data: {
-        id: "687246",
-        name: "Aubree",
-        area: "Rajarajeshwari Nagar",
-        cloudinaryImageId: "6a7973d432c533933de71326a0a3dde9",
-        cuisines: ["Desserts", "Bakery"],
-        costForTwo: 80000,
-        deliveryTime: 24,
-        avgRating: "4.1",
-      },
-    },
-    {
-      data: {
-        id: "687247",
-        name: "ABC",
-        area: "Rajarajeshwari Nagar",
-        cloudinaryImageId: "6a7973d432c533933de71326a0a3dde9",
-        cuisines: ["Desserts", "Bakery"],
-        costForTwo: 80000,
-        deliveryTime: 24,
-        avgRating: "3.9",
-      },
-    },
-  ];
+  const [listOfRestaurent, setlistOfRestaurent] = useState(resList);
 
   return (
     <div className="body">
@@ -35,10 +11,10 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            listOfRestaurent = listOfRestaurent.filter(
+            const filteredList = listOfRestaurent.filter(
               (res) => res.data.avgRating > 4
             );
-            console.log(listOfRestaurent);
+            setlistOfRestaurent(filteredList);
           }}
         >
           Top Rated Restaurant
