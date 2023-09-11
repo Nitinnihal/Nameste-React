@@ -1,9 +1,29 @@
 import RestaurentCard from "./RestaurentCard";
-import resList from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
-  const [listOfRestaurent, setlistOfRestaurent] = useState(resList);
+  const [listOfRestaurent, setlistOfRestaurent] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const data = await fetch(
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.905874851836899&lng=77.49981600791217&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+    );
+
+    const json = await data.json();
+    console.log(json);
+    setlistOfRestaurent(
+      json?.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+  };
+
+  if (listOfRestaurent.length === 0) {
+    return <Shimmer />;
+  }
 
   return (
     <div className="body">
@@ -22,7 +42,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {listOfRestaurent.map((restaurant) => (
-          <RestaurentCard key={restaurant.data.id} resData={restaurant} />
+          <RestaurentCard key={restaurant?.data?.info} resData={restaurant} />
         ))}
       </div>
     </div>

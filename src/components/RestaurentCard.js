@@ -4,7 +4,7 @@ const RestaurentCard = (Props) => {
   const { resData } = Props;
 
   const {
-    name,
+    // name,
     cuisines,
     avgRating,
     costForTwo,
